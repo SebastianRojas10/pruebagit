@@ -1,12 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sorpresa para el contador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f4f8;
+            margin: 0;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        #contenedor {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            transition: all 0.5s ease-in-out;
+        }
+
+        #form-container h1, #form-container label {
+            color: #333;
+        }
+
+        #form-container h1 {
+            color: #333;
+        }
+
+        #form-container label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        #form-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        #form-container button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 25px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        #form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        #mensaje-sorpresa {
+            display: none;
+            text-align: center;
+        }
+
+        #mensaje-sorpresa h1 {
+            font-size: 2.5em;
+            color: #e74c3c;
+            animation: pulse 2s infinite;
+        }
+
+        #mensaje-sorpresa p {
+            color: #333;
+        }
+
+        .image-container {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .image-container img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1></h1>
-    <h2></h2>
+    <div id="contenedor">
+        <div id="form-container">
+            <h1>Ingresa tus datos</h1>
+            <label for="nombre">Tu nombre:</label>
+            <input type="text" id="nombre" placeholder="Ej. Rhoshandiatellyneshiaunneveshenk">
+            
+            <label for="fecha">Tu día de nacimiento:</label>
+            <input type="date" id="fecha">
+            
+            <button onclick="verificar()">Verificar</button>
+        </div>
+        
+        <div id="mensaje-sorpresa">
+            <h1>¡Feliz día contadora Jamzín! 🎉</h1>
+            <p>"Hoy celebramos a quienes convierten los números en confianza, <br>
+                los balances en tranquilidad, y las cuentas en claridad. <br>
+                 Ser contador no es solo manejar cifras, <br>
+                 es ser también el guardián de la transparencia, <br>
+                 el arquitecto de la estabilidad financiera,<br>
+                  y el aliado silencioso de cada sueño emprendedor. <br>
+                   <h2>¡Feliz Día del Contadora!</h2>
+                  
+            <div class="image-container">
+                <img src="https://especializate.usat.edu.pe/wp-content/uploads/2021/08/contabilidad-para-no-contadores.jpg" alt="Descripción de la imagen 1">
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function verificar() {
+        
+            const nombreCorrecto = "Jazmín";
+            const fechaCorrecta = "2006-07-05"; 
+            const nombreIngresado = document.getElementById("nombre").value.trim();
+            const fechaIngresada = document.getElementById("fecha").value;
+            
+            const contenedor = document.getElementById("contenedor");
+            const formContainer = document.getElementById("form-container");
+            const mensajeSorpresa = document.getElementById("mensaje-sorpresa");
+            
+            if (nombreIngresado === nombreCorrecto && fechaIngresada === fechaCorrecta) {
+                formContainer.style.display = 'none';
+                mensajeSorpresa.style.display = 'block';
+                contenedor.style.backgroundColor = '#ecf0f1';
+                contenedor.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.2)';
+            } else {
+                alert("Datos incorrectos. Intenta de nuevo.");
+            }
+        }
+    </script>
 </body>
 </html>
