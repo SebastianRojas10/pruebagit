@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorpresa para alguien especial</title>
+    <style>
+        body {
+            font-family: Segoe Print, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e99bcc;
+            margin: 0;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        #contenedor {
+            background-color: #efc4ed;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            transition: all 0.5s ease-in-out;
+        }
+
+        #form-container h1, #form-container label {
+            color: #333;
+        }
+
+        #form-container h1 {
+            color: #333;
+        }
+
+        #form-container label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        #form-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #a58282;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        #form-container button {
+            background-color: #4d9ef4;
+            color: rgb(5, 5, 5);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 25px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        #form-container button:hover {
+            background-color: #3389e5;
+        }
+
+        #mensaje-sorpresa {
+            display: none;
+            text-align: center;
+        }
+
+        #mensaje-sorpresa h1 {
+            font-size: 3.5em;
+            color: #e74c3c;
+            animation: pulse 2s infinite;
+        }
+
+        #mensaje-sorpresa p {
+            color: #333;
+        }
+
+        .image-container {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .image-container img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="form-container">
+            <h1>Ingresa tus datos</h1>
+            <label for="nombre">Tu nombre:</label>
+            <input type="text" id="nombre" placeholder="Ej.">
+            
+            <label for="fecha">Tu día de nacimiento:</label>
+            <input type="date" id="fecha">
+            
+            <button onclick="verificar()">Verificar</button>
+        </div>
+        
+        <div id="mensaje-sorpresa">
+            <h1>Hola princesa ! </h1>
+            <p>Sed de ti me acosa en las noches hambrientas. <br>
+Trémula mano roja que hasta su vida se alza. <br>
+Ebria de sed, loca sed, sed de selva en sequía <br>
+Sed de metal ardiendo, sed de raíces ávidas... <br>
+Por eso eres la sed y lo que ha de saciarla. <br>
+Cómo poder no amarte si he de amarte por eso. <br>
+Si ésa es la amarra cómo poder cortarla, cómo. <br>
+Cómo si hasta mis huesos tienen sed de tus huesos. <br>
+Sed de ti, guirnalda atroz y dulce. <br>
+Sed de ti que en las noches me muerde como un perro. <br>
+Los ojos tienen sed, para qué están tus ojos. <br>
+La boca tiene sed, para qué están tus besos. <br>
+El alma está incendiada de estas brasas que te aman. <br>
+El cuerpo incendio vivo que ha de quemar tu cuerpo. <br>
+De sed. Sed infinita. Sed que busca tu sed. <br>
+Y en ella se aniquila como el agua en el fuego </p>
+
+            <div class="image-container">
+                <img src="file:///C:/Users/Sebasti%C3%A1n/OneDrive/Pictures/descarga.jpeg" alt="Imagen 1">
+                
+                
+            </div>
+        </div>
+    </div>
+  <audio id="audio-sorpresa" src="file:///C:/Users/Sebasti%C3%A1n/Downloads/Le%C3%B3n%20Larregui%20-%20Brillas%20(Video%20Oficial)%20(mp3cut.net).mp3" preload="auto"></audio>
+
+    <script>
+        function verificar() {
+        
+            const nombreCorrecto = "Maciel";
+            const fechaCorrecta = "2008-12-11"; 
+            const nombreIngresado = document.getElementById("nombre").value.trim();
+            const fechaIngresada = document.getElementById("fecha").value;
+            
+            const contenedor = document.getElementById("contenedor");
+            const formContainer = document.getElementById("form-container");
+            const mensajeSorpresa = document.getElementById("mensaje-sorpresa");
+            const audio = document.getElementById("audio-sorpresa");
+            if (nombreIngresado === nombreCorrecto && fechaIngresada === fechaCorrecta) {
+                formContainer.style.display = 'none';
+                mensajeSorpresa.style.display = 'block';
+                contenedor.style.backgroundColor = '#ecf0f1';
+                contenedor.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.2)';
+            audio.play();
+            } else {
+                alert("Datos incorrectos. Intenta de nuevo.");
+            }
+        }
+    </script>
+</body>
+</html>
