@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: serif;
+  background-color: #4d9dd2;}
+ul.botones {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 0;
+list-style: none;}
+a.boton {
+  background-color: #e0e0e0;
+  color: black;            /* letras negras */
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+margin: 0 30px;}
+a.boton:hover {
+  background-color: #bdbdbd;}
+header {
+  background-color: #1976d2;
+  color: black;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 40px;
+  font-weight: bold;}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background-color:#4d9dd2;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;}
+.seccion {
+  background-color: #e0e0e0;
+  height: 160px;
+  margin: 20px 40px;
+  border-radius: 10px;}
+footer {
+  background-color: #1976d2;
+  color: black;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 16px;}
+  .seccion {
+  margin-top: 40px;     /* baja la sección */
+  margin-left: 60px;    /* separa del borde izquierdo */
+  margin-right: 40px;   /* opcional: espacio derecho */
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  text-align: justify;}
+  
+  .logo-unc {
+    /* Define el tamaño para que no se vea muy grande */
+    width: 80px; /* Ajusta este valor (ej: 50px, 100px) */
+    height: auto; /* Mantiene la proporción original de la imagen */
+
+    /* Posicionamiento en la esquina superior derecha */
+    position: absolute; 
+    top: 20px;   /* Distancia desde el borde superior */
+    right: 20px; /* Distancia desde el borde derecho */
+}
+    
