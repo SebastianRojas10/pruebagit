@@ -1,0 +1,183 @@
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(16, 199, 224)
+}
+
+.box {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.box .inner {
+    width: 400px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 3.5em;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.box .inner:first-child {
+    background: linear-gradient(to right, #a1fe7a, #61f590);
+    color: #22c3cf;
+    transform-origin: right;
+    transform: perspective(100px) rotateY(-15deg);
+}
+
+
+.box .inner:last-child {
+    background: linear-gradient(to left, #8ee76e, #89ff6e);
+    color: #08b1d2;
+    transform-origin: left;
+    transform: perspective(100px) rotateY(15deg);
+}
+
+
+.box .inner span {
+    position: absolute;
+    animation: marquee 6s linear infinite;
+    text-shadow: 0 0 10px #82e067, 0 0 20px #94f073;
+}
+
+.box .inner:first-child span {
+    animation-delay: 3s;
+    left: -100%;
+}
+
+
+@keyframes marquee {
+    from { left: 100%; }
+    to { left: -100%; }
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(to bottom, #0fd3dd, #15d5e7);
+    color: black;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+nav ul li a:hover {
+    transform: scale(1.15) rotate(-2deg);
+    background: linear-gradient(to bottom, #12acd7, #15c0e6);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.29);
+    color: black;
+}
+
+
+section {
+    background: linear-gradient(to left, #efdc99, #f6de89);
+    margin: 20px auto;
+    padding: 25px;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(to right, #13d7e5, #0eb3ef);
+    color: rgb(17, 90, 200);
+    margin-top: 80px;
+    width: 160%;             
+    border-radius: 3;           
+}
+
+a {
+    font-size: 22px;
+    text-decoration: none;
+    color: rgb(13, 140, 165);
+    transition: all 0.3s ease;
+}
+
+
+a:hover {
+    color: #16a1dc;
+    font-size: 25px;
+    text-shadow: 0px 0px 8px #1d9eea;
+}
+
+.titulo-proyecto-sheen {
+ 
+    display: inline-block; 
+    font-size: 60px;       
+    font-weight: bold;    
+    text-decoration: none; 
+    text-transform: uppercase;
+    
+ 
+    position: relative; 
+    overflow: hidden; 
+    padding: 10px 25px;      /* Espacio alrededor del texto */
+    
+    
+    background-color: #11d4f2; /* Un verde similar al de tu imagen */
+    color: rgb(7, 159, 241);             /* Color del texto */
+    border: none;
+    border-radius: 8px; /* Bordes redondeados sutiles */
+    cursor: default;    /* Opcional: para que no parezca un enlace/botón estándar */
+}
+
+/* 2. EFECTO SHEEN (La luz) */
+.titulo-proyecto-sheen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%; 
+    width: 100%;
+    height: 100%;
+    
+    /* Degradado de la luz */
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    
+    transform: skewX(-20deg); 
+    transition: left 0.5s ease-in-out;
+}
+
+/* 3. ANIMACIÓN AL HACER HOVER */
+.titulo-proyecto-sheen:hover::after {
+    left: 150%; 
+}
